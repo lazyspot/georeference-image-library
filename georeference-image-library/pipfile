@@ -1,0 +1,11 @@
+[[source]]
+url = 'https://github.com/lazyspot/georeference-image-library'
+verify_ssl = true
+name = 'georeference-image-library'
+
+[requires]
+python_version = '3.6'
+
+[packages]
+
+[dev-packages]
