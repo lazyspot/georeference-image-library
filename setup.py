@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='georeference-image-library-LAZYSPOT',
+    name='georeference-image-library',
     version='0.0.1',
     packages=setuptools.find_packages(),
     long_description=long_description,
