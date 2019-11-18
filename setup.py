@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='georeference-image-library',
-    version='',
+    version='1.0',
     packages=[''],
     url='',
     license='',
