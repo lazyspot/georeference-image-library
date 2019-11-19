@@ -6,6 +6,9 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='georeference-image-library',
     version='0.0.1',
+    description='Library for georeference image.',
+    py_modules=["image"],
+	package_dir={'': 'georeference-image-library'},
     packages=setuptools.find_packages(),
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,7 +16,7 @@ setuptools.setup(
     license='',
     author='LazySpot',
     author_email='marcin@lazyspot.net',
-    description='Library for georeference image.',
+
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
