@@ -8,7 +8,6 @@ setuptools.setup(
     version='0.0.1',
     description='Library for georeference image.',
     py_modules=["georeference-image-library"],
-    package_dir={'': 'georeference-image-library'},
     packages=setuptools.find_packages(),
     long_description=long_description,
     long_description_content_type="text/markdown",
