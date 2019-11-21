@@ -1,6 +1,6 @@
 before_script:
-  - python --version
-  - pip install pytest
+    - python --version
+    - pip install pytest
 
 stages:
     - build
