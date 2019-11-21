@@ -1,5 +1,6 @@
+image: "python:3.7"
+
 before_script:
-    - sudo yum install -y python3
     - python --version
     - pip install pytest
 
