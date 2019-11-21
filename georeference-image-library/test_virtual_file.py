@@ -1,25 +1,69 @@
 from virtual_file import VirtualFile
 
-testfile1 = VirtualFile(path="test.tar.gz")
-testfile2 = VirtualFile(path="/directory/file.c")
-
-def test_double_value_extension():
-    assert testfile1.get_extension == ".tar.gz"
+virtual_file1 = VirtualFile(path="test.tar.gz")
 
 
-def test_get_file_name():
-    assert testfile1.get_filename == "test"
+def test_virtual_file1_get_filename():
+    assert virtual_file1.get_filename == "test.tar.gz"
 
 
+def test_virtual_file1_get_file():
+    assert virtual_file1.get_file == "test"
 
 
-
-def test_get_extension():
-    assert testfile2.get_extension == ".c"
-
-def test_get_file_name():
-    assert testfile2.get_filename == "file"
+def test_virtual_file1_double_value_extension():
+    assert virtual_file1.get_extension == ".tar.gz"
 
 
-print("path: " + testfile1.get_path)
-print("extension: " + testfile1.get_extension)
+def test_virtual_file1_path():
+    assert virtual_file1.get_path == "test.tar.gz"
+
+
+def test_file1_empty_directory():
+    assert virtual_file1.get_directory == ""
+
+
+virtual_file2 = VirtualFile(path="/directory/file.c")
+
+
+def test_virtual_file2_get_filename():
+    assert virtual_file2.get_filename == "file.c"
+
+
+def test_virtual_file2_get_file():
+    assert virtual_file2.get_file == "file"
+
+
+def test_virtual_file2_get_extension():
+    assert virtual_file2.get_extension == ".c"
+
+
+def test_virtual_file2_single_path():
+    assert virtual_file2.get_path == "/directory/file.c"
+
+
+def test_virtual_file2_single_directory():
+    assert virtual_file2.get_directory == "/directory/"
+
+
+virtual_file3 = VirtualFile(path="/dec/directory/lok/source.n")
+
+
+def test_virtual_file3_get_filename():
+    assert virtual_file3.get_filename == "source.n"
+
+
+def test_virtual_file3_get_file():
+    assert virtual_file3.get_file == "source"
+
+
+def test_virtual_file3_get_extension():
+    assert virtual_file3.get_extension == ".n"
+
+
+def test_virtual_file3_single_path():
+    assert virtual_file3.get_path == "/dec/directory/lok/source.n"
+
+
+def test_virtual_file3_single_directory():
+    assert virtual_file3.get_directory == "/dec/directory/lok/"
