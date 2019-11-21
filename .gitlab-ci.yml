@@ -1,6 +1,11 @@
+before_script:
+  - python --version
+  - pip install pytest
+
 stages:
     - build
     - test
+    - pytest
 
 build:
     stage: build
@@ -17,3 +22,7 @@ test:
     script:
         - echo "Testing"
         - test -f "build/info.txt"
+pytest:
+    stage: pytest
+    script:
+        - pytest
