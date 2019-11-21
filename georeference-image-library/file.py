@@ -1,8 +1,8 @@
 import os
 import pytest
-from file import File
 
-class Image(File):
+
+class File:
     def __init__(self, path):
         self.__path = path
         self.__path = os.path.abspath(self.__path)
