@@ -67,3 +67,34 @@ def test_virtual_file3_single_path():
 
 def test_virtual_file3_single_directory():
     assert virtual_file3.get_directory == "/dec/directory/lok/"
+
+
+# def test_virtual_file3_change_slash_to_backslash():
+#     virtual_file3.change_slash_to_backslash()
+#     assert virtual_file3.get_directory == '\dec\directory\lok\\'
+#
+#
+# def test_virtual_file3_change_backslash_to_slash():
+#     virtual_file3.change_backslash_to_slash()
+#     assert virtual_file3.get_directory == "/dec/directory/lok/"
+#
+#
+# virtual_file4 = VirtualFile(path="\mej\sr\kleep\mmf\sess.j")
+#
+#
+# def test_virtual_file4_get_filename():
+#     assert virtual_file4.get_filename == "sess.j"
+#
+#
+# def test_virtual_file4_change_slash_to_backslash():
+#     virtual_file4.change_slash_to_backslash()
+#     assert virtual_file4.get_directory == "\mej\sr\kleep\mmf\sess.j"
+#
+#
+# def test_virtual_file4_get_directory():
+#     assert virtual_file4.get_directory == "\mej\sr\kleep\mmf\\"
+#
+#
+# def test_virtual_file4_change_backslash_to_slash():
+#     virtual_file4.change_backslash_to_slash()
+#     assert virtual_file4.get_directory == "/mej/sr/kleep/mmf/"

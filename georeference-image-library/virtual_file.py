@@ -14,6 +14,9 @@ class VirtualFile:
             self.__extension += "." + self.__filename.split(".")[i]
             i += 1
 
+    def __del__(self):
+        pass
+
     @property
     def get_filename(self):
         return str(self.__filename)
@@ -35,10 +38,20 @@ class VirtualFile:
         if '/' in self.__path:
             return str(self.__path[:-len(self.__path.split("/")[-1])])
         elif '\\' in self.__path:
-            return str(self.__path[:len(self.__path.split("\\")[-1])])
+            return str(self.__path[:len(self.__path.split('\\')[-1])])
         else:
             return ""
 
     @property
     def delete_file(self):
         return str("rm " + self.__path)
+
+    def change_backslash_to_slash(self):
+        """WARNING: NOT WORKING"""
+        if "\\" in self.__path:
+            self.__init__(path=str(self.__path).replace("\\", "/"))
+
+    def change_slash_to_backslash(self):
+        """WARNING: NOT WORKING"""
+        if "/" in self.__path:
+            self.__init__(path=str(self.__path).replace("/", '\\'))
