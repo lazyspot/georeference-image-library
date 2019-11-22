@@ -1,61 +1,27 @@
-image: "python:3.5"
-
-before_script:
-    - python --version
-    - pip install pytest
-
 stages:
-    - build
-    - test
-    - pytest
+    - "pytest"
 
-build:
-    stage: build
-    script:
-        - echo "Building"
-        - mkdir build
-        - touch build/info.txt
-    artifacts:
-        paths:
-            - build/
-
-test:
-    stage: test
-    script:
-        - echo "Testing"
-        - test -f "build/info.txt"
 pytest:
     stage: pytest
     script:
         - pytest
-        
-image: "python:3.7"
 
-before_script:
-    - python --version
-    - pip install pytest
+verify-3.5:
+    extends: ".pytest"
+    stage: "pytest"
+    image: "python:3.5"
 
-stages:
-    - build
-    - test
-    - pytest
+verify-3.6:
+    extends: ".pytest"
+    stage: "pytest"
+    image: "python:3.6"
 
-build:
-    stage: build
-    script:
-        - echo "Building"
-        - mkdir build
-        - touch build/info.txt
-    artifacts:
-        paths:
-            - build/
+verify-3.7:
+    extends: ".pytest"
+    stage: "pytest"
+    image: "python:3.7"
 
-test:
-    stage: test
-    script:
-        - echo "Testing"
-        - test -f "build/info.txt"
-pytest:
-    stage: pytest
-    script:
-        - pytest
+verify-3.8:
+    extends: ".pytest"
+    stage: "pytest"
+    image: "python:3.8"
