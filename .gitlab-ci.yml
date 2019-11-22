@@ -7,6 +7,11 @@ stages:
         - pip install pytest
         - pytest
 
+verify-3.5:
+    extends: ".verify"
+    stage: "verify"
+    image: "python:3.5"
+
 verify-3.6:
     extends: ".verify"
     stage: "verify"
@@ -16,3 +21,8 @@ verify-3.7:
     extends: ".verify"
     stage: "verify"
     image: "python:3.7"
+
+verify-3.8:
+    extends: ".verify"
+    stage: "verify"
+    image: "python:3.8"
