@@ -3,6 +3,8 @@ stages:
 
 .verify:
     script:
+        - python --version
+        - pip install pytest
         - pytest
 
 verify-3.6:
