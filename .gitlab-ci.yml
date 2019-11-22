@@ -1,27 +1,16 @@
 stages:
-    - "pytest"
+    - "verify"
 
-.pytest:
-    stage: pytest
+.verify:
     script:
         - pytest
 
-verify-3.5:
-    extends: ".pytest"
-    stage: "pytest"
-    image: "python:3.5"
-
 verify-3.6:
-    extends: ".pytest"
-    stage: "pytest"
+    extends: ".verify"
+    stage: "verify"
     image: "python:3.6"
 
 verify-3.7:
-    extends: ".pytest"
-    stage: "pytest"
+    extends: ".verify"
+    stage: "verify"
     image: "python:3.7"
-
-verify-3.8:
-    extends: ".pytest"
-    stage: "pytest"
-    image: "python:3.8"
