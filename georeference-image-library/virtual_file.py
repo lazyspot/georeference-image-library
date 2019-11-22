@@ -1,4 +1,7 @@
-class VirtualFile:
+from virtual_directory import VirtualDirectory
+
+
+class VirtualFile(VirtualDirectory):
     def __init__(self, path):
         self.__path = path
         self.__filename = path
@@ -13,6 +16,13 @@ class VirtualFile:
         while i < len(self.__filename.split(".")):
             self.__extension += "." + self.__filename.split(".")[i]
             i += 1
+
+        if '/' in self.__path:
+            VirtualDirectory.__init__(self, directory=str(self.__path[:-len(self.__path.split("/")[-1])]))
+        elif '\\' in self.__path:
+            VirtualDirectory.__init__(self, directory=str(self.__path[:len(self.__path.split('\\')[-1])]))
+        else:
+            VirtualDirectory.__init__(self, directory="")
 
     def __del__(self):
         pass
@@ -32,15 +42,6 @@ class VirtualFile:
     @property
     def get_path(self):
         return str(self.__path)
-
-    @property
-    def get_directory(self):
-        if '/' in self.__path:
-            return str(self.__path[:-len(self.__path.split("/")[-1])])
-        elif '\\' in self.__path:
-            return str(self.__path[:len(self.__path.split('\\')[-1])])
-        else:
-            return ""
 
     @property
     def delete_file(self):
