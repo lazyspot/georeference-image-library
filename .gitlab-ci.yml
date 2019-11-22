@@ -1,7 +1,7 @@
 stages:
     - "pytest"
 
-pytest:
+.pytest:
     stage: pytest
     script:
         - pytest
