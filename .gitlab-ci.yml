@@ -4,6 +4,7 @@ stages:
 .verify:
     script:
         - python --version
+        - pip install gdal
         - pip install pytest
         - pytest
 
