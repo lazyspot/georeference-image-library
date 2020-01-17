@@ -10,17 +10,17 @@ stages:
         - pip3 install pytest
         - pytest
 
-verify-latest:
+verify-gdal-latest:
     extends: ".verify"
     stage: "verify"
     image: osgeo/gdal:ubuntu-full-latest
 
-verify-3.0.3:
+verify-gdal-3.0.3:
     extends: ".verify"
     stage: "verify"
     image: osgeo/gdal:ubuntu-full-3.0.3
 
-verify-3.0.2:
+verify-gdal-3.0.2:
     extends: ".verify"
     stage: "verify"
     image: osgeo/gdal:ubuntu-full-3.0.2
