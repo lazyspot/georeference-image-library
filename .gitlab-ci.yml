@@ -3,27 +3,24 @@ stages:
 
 .verify:
     script:
-        - python --version
-        - pip install gdal
-        - pip install pytest
+        - apt-get install -y sudo
+        - sudo apt-get update -y
+        - sudo apt-get install -y python3
+        - sudo apt-get install -y python3-pip
+        - pip3 install pytest
         - pytest
 
-verify-3.5:
+verify-latest:
     extends: ".verify"
     stage: "verify"
-    image: "python:3.5"
+    image: osgeo/gdal:ubuntu-full-latest
 
-verify-3.6:
+verify-3.0.3:
     extends: ".verify"
     stage: "verify"
-    image: "python:3.6"
+    image: osgeo/gdal:ubuntu-full-3.0.3
 
-verify-3.7:
+verify-3.0.2:
     extends: ".verify"
     stage: "verify"
-    image: "python:3.7"
-
-verify-3.8:
-    extends: ".verify"
-    stage: "verify"
-    image: "python:3.8"
+    image: osgeo/gdal:ubuntu-full-3.0.2
