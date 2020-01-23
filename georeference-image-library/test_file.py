@@ -2,6 +2,7 @@ from file import File
 
 file1 = File("test.tar.gz")
 
+
 def test_file_1_extension():
     assert file1.get_extension == ".tar.gz"
 
@@ -72,22 +73,24 @@ def test_file3_change_backslash_to_slash():
     assert file3.parent.get_directory_str_slash() == "/dec/directory/lok"
 
 
-# virtual_file4 = VirtualFile(path="\mej\sr\kleep\mmf\sess.j")
-#
-#
-# def test_virtual_file4_get_filename():
-#     assert virtual_file4.get_filename == "sess.j"
-#
-#
+file4 = File("\mej\sr\kleep\mmf\sess.j")
+
+
+
+
+
+def test_virtual_file4_get_filename():
+    assert file4.get_extension == ".j"
+
+
 # def test_virtual_file4_change_slash_to_backslash():
-#     virtual_file4.change_slash_to_backslash()
-#     assert virtual_file4.get_directory == "\mej\sr\kleep\mmf\sess.j"
-#
-#
+#     file4.change_slash_to_backslash()
+#     assert file4.get_directory == "\mej\sr\kleep\mmf\sess.j"
+
+
 # def test_virtual_file4_get_directory():
-#     assert virtual_file4.get_directory == "\mej\sr\kleep\mmf\\"
-#
-#
+#     assert str(file4.parent) == "\\mej\\sr\\kleep\\mmf"
+
 # def test_virtual_file4_change_backslash_to_slash():
-#     virtual_file4.change_backslash_to_slash()
-#     assert virtual_file4.get_directory == "/mej/sr/kleep/mmf/"
+#     file4.change_backslash_to_slash()
+#     assert file4.get_directory == "/mej/sr/kleep/mmf/"

@@ -20,4 +20,3 @@ class Image(File):
                 data_set = gdal.Open(self, gdal.GA_ReadOnly)
                 return data_set.RasterYSize
 
-
