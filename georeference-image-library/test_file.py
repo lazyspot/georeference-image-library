@@ -76,10 +76,7 @@ def test_file3_change_backslash_to_slash():
 file4 = File("\mej\sr\kleep\mmf\sess.j")
 
 
-
-
-
-def test_virtual_file4_get_filename():
+def test_virtual_file4_get_extension():
     assert file4.get_extension == ".j"
 
 
